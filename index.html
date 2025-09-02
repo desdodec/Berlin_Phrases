@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Phrases</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 15px; background-color: #f7f7f7; color: #333; }
+        .container { max-width: 600px; margin: auto; }
+        h1 { color: #1a1a1a; text-align: center; margin-bottom: 25px;}
+        .category { background-color: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; }
+        .category-header { padding: 20px; font-size: 1.2em; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+        .category-header span { font-size: 1.5em; color: #007aff; transition: transform 0.3s; }
+        .category-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; }
+        .phrase { border-top: 1px solid #eee; padding: 15px 0; }
+        .german { font-size: 1.1em; font-weight: bold; color: #0056b3; }
+        .english { font-style: italic; color: #555; margin-top: 5px; }
+        .pronunciation { background-color: #eef7ff; color: #004a8d; padding: 8px 12px; border-radius: 8px; margin-top: 10px; display: inline-block; font-size: 0.95em; font-family: monospace; }
+        .pronunciation-tip { font-style: italic; color: #d9534f; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>German Survival Phrases 🇩🇪</h1>
+
+    <div class="category">
+        <div class="category-header" onclick="toggle(this)">Greetings & Farewells 👋<span>+</span></div>
+        <div class="category-content">
+            <div class="phrase"><div class="german">Hallo.</div><div class="english">Hello.</div><div class="pronunciation">Ha-loh</div></div>
+            <div class="phrase"><div class="german">Guten Tag!</div><div class="english">Good day!</div><div class="pronunciation">GOO-ten TAHK</div></div>
+            <div class="phrase"><div class="german">Auf Wiedersehen.</div><div class="english">Goodbye.</div><div class="pronunciation">Owf VEE-der-zay-en</div></div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-header" onclick="toggle(this)">Politeness & Basics 🙏<span>+</span></div>
+        <div class="category-content">
+            <div class="phrase"><div class="german">Ja / Nein.</div><div class="english">Yes / No.</div><div class="pronunciation">Yah / Nine</div></div>
+            <div class="phrase"><div class="german">Danke!</div><div class="english">Thank you!</div><div class="pronunciation">DAHN-kuh</div></div>
+            <div class="phrase"><div class="german">Vielen Dank!</div><div class="english">Thanks a lot!</div><div class="pronunciation">FEE-len DAHNK</div></div>
+            <div class="phrase"><div class="german">Dankeschön!</div><div class="english">Thanks a lot! (polite)</div><div class="pronunciation">DAHN-kuh-shurn <span class="pronunciation-tip">(ö sounds like "ur" in burn)</span></div></div>
+            <div class="phrase"><div class="german">Entschuldigung.</div><div class="english">Excuse me / Sorry.</div><div class="pronunciation">ent-SHOOL-dee-goong</div></div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-header" onclick="toggle(this)">Restaurant & Café ☕<span>+</span></div>
+        <div class="category-content">
+            <div class="phrase"><div class="german">...die Speisekarte bitte!</div><div class="english">...the menu please!</div><div class="pronunciation">dee SHPY-zuh-car-tuh BIT-uh</div></div>
+            <div class="phrase"><div class="german">...zahlen bitte!</div><div class="english">...pay please!</div><div class="pronunciation">TSAH-len BIT-uh</div></div>
+            <div class="phrase"><div class="german">Mit der Karte, bitte!</div><div class="english">With the card, please!</div><div class="pronunciation">Mit day-er CAR-tuh, BIT-uh</div></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggle(header) {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('span');
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.style.transform = "rotate(0deg)";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = "rotate(45deg)";
+        }
+    }
+</script>
+
+</body>
+</html>
